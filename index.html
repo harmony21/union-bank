@@ -5,7 +5,7 @@
         <title>UNION ADVICE BANK</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link href="css/normalize.css" type="text/css" rel="stylesheet" />  
+        <link href="css/normalize.css" type="text/css" rel="stylesheet" />  
         <link href="css/main.css" type="text/css" rel="stylesheet" />  
     </head>
     <body>
@@ -13,16 +13,18 @@
             <!-- Главная страница -->
             <div class="main-page">
                 <header class="header">
-                    <img src="images/logo_header.png" alt="">
+                    <img src="images/logo_header_1.png" alt="">
                     <nav class="menu">
-                        <a href="#" class="menu__link">Онлайн заявка</a>
-                        <a href="#" class="menu__link">Услуги</a>
-                        <a href="#" class="menu__link">Преимущества</a>
-                        <a href="#" class="menu__link">Консультирование</a>
+                        <a href="#online" class="menu__link">Онлайн заявка</a>
+                        <a href="#services" class="menu__link">Услуги</a>
+                        <a href="#advantages" class="menu__link">Преимущества</a>
+                        <a href="#consultant" class="menu__link">Консультирование</a>
                     </nav>
                     <div class="phone">
-                        <p class="number">8 (800) 200-00-00</p>
-                        <p class="free-consult">Получить бесплатную консультацию</p>
+                        <a href="tel:+74956460182" class="number">
+                            <p class="number">+7 (495) 646-01-82</p>
+                            <p class="free-consult">Получить бесплатную консультацию</p>
+                        </a>
                     </div>
                 </header>
                 <div class="main-content">
@@ -31,7 +33,7 @@
                         <li class="main-content__item"><span>Рассмотрение заявки онлайн</span></li>
                         <li class="main-content__item"><span>100% прозрачные условия</span></li>
                     </ul>
-                    <button class="btn"><a href="#">Получить банковскую гарантию</a></button> 
+                    <button class="btn"><a href="#online">Получить банковскую гарантию</a></button> 
                 </div>
             </div>
             <hr>
@@ -47,17 +49,20 @@
                         <input type="submit" value="Отправить заявку">
                     </div>
                     <div class="agree">
-                        <label>
-                            <input class="checkbox" type="checkbox" name="checkbox-test">
+                         <label> 
+
+                            <input class="checkbox" type="checkbox" name="checkbox-test" required>
                             <span class="checkbox-custom"></span>
+
                             <span class="label">Я согласен с условием обработки персональных данных </span>
-                        </label>
+
+                             </label> 
                     </div>
                 </form>
             </div>
             <!-- Блок "Услуги нашей компании" -->
             <div class="services">
-                <h1 class="services__title">Услуги нашей компании</h1>
+                <h1 class="services__title"><a name="services">Услуги нашей компании</a></h1>
                 <div class="services__items">
                     <div class="services__item">
                         <img src="images/item1.png" alt="">
@@ -79,7 +84,7 @@
                         <button class="btn"><a href="#">Рассчитать</a></button>
                     </div>
                     <div class="services__item">
-                        <img src="images/item3.png" alt="">
+                        <img src="images/item3.png" alt="" class="img">
                         <h2 class="services__name">Банковская гарантия</h2>
                         <ul>
                             <li><span>На участие в конкурсе/аукционе (44-ФЗ, 223-ФЗ)</span></li>
@@ -94,7 +99,7 @@
                         <button class="btn"><a href="#">Рассчитать</a></button>
                     </div>
                     <div class="services__item">
-                        <img src="images/item4.png" alt="">
+                        <img src="images/item4.png" alt="" class="img">
                         <h2 class="services__name">Факторинг</h2>
                         <ul>
                             <li><span>Ликвидация кассового разрыва</span></li>
@@ -168,7 +173,7 @@
             <hr>
             <!-- Наши преимущества -->
             <div class="advantages">
-                <h1 class="advantages__title">Наши преимущества</h1>
+                <h1 class="advantages__title"><a name="advantages">Наши преимущества</a></h1>
                 <div class="advantages__wrap">
                     <div class="advantages__item">
                         <img src="images/item5.png" alt="">
@@ -178,7 +183,7 @@
                         </p>
                     </div>
                     <div class="advantages__item">
-                        <img src="images/item6.png" alt="">
+                        <img src="images/item6.png" alt="" class="img">
                         <h2 class="advantages__name">Экономия денег</h2>
                         <p class="advantages__desc">Автоматический подбор
                             выгодных тарифов
@@ -199,7 +204,7 @@
                         </p>
                     </div>
                     <div class="advantages__item">
-                        <img src="images/item9.png" alt="">
+                        <img src="images/item9.png" alt="" class="img">
                         <h2 class="advantages__name">Безопасность</h2>
                         <p class="advantages__desc">Поддержка конфиденциального 
                             доступа
@@ -280,7 +285,7 @@
             </div>
             <!-- Отправьте заявку, мы вам перезвоним -->
             <div class="feedback">
-                <h2 class="feedback__title">
+                <h2 class="feedback__title"><a name="online"></a>
                     Отправьте заявку на гарантию прямо сейчас!
                 </h2>
                 <p class="feedback__prew">
@@ -299,7 +304,7 @@
 
                         <div class="checkbox-wrap">
                             <label>
-                                <input class="checkbox-white" type="checkbox" name="checkbox-test">
+                                <input class="checkbox-white" type="checkbox" name="checkbox-test" required>
                                 <span class="checkbox-custom-white"></span>
                                 <span class="label">Я согласен с условием обработки персональных данных </span>
                             </label>
@@ -310,15 +315,17 @@
             </div>
             <!-- Выберите персонального консультанта -->
             <div class="personal">
-                <h1 class="personal__title">Выберите персонального консультанта</h1>
+                <h1 class="personal__title"><a name="consultant">Выберите персонального консультанта</a></h1>
                 <div class="personal__wrap">
                     <div class="personal__item">
                         <img src="images/person1.png" alt="">
                         <p class="personal__name">Константин Белов</p>
                         <p class="personal__occ">
                             Ведущий консультант <br>
-                            office@dvarf.ru <br>
-                            +7 (985) 333-55-55
+                            <a href="mailto:office@dvarf.ru">office@dvarf.ru</a> <br>
+                            <a href="tel:+79853335555">
+                                <span class="personal__phone">+7 (985) 333-55-55</span>
+                            </a>
                         </p>
                     </div>
                     <div class="personal__item">
@@ -326,8 +333,10 @@
                         <p class="personal__name">Полина Баланян</p>
                         <p class="personal__occ">
                             Консультант <br>
-                            office@dvarf.ru <br>
-                            +7 (985) 333-55-55
+                            <a href="mailto:office@dvarf.ru">office@dvarf.ru</a> <br>
+                            <a href="tel:+79853335555">
+                                <span class="personal__phone">+7 (985) 333-55-55</span>
+                            </a>
                         </p>
                     </div>
                     <div class="personal__item">
@@ -335,8 +344,10 @@
                         <p class="personal__name">Татьяна Фридман</p>
                         <p class="personal__occ">
                             Консультант <br>
-                            office@dvarf.ru <br>
-                            +7 (985) 333-55-55
+                            <a href="mailto:office@dvarf.ru">office@dvarf.ru</a> <br>
+                            <a href="tel:+79853335555">
+                                <span class="personal__phone">+7 (985) 333-55-55</span>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -381,7 +392,7 @@
                         <p class="specialists__name">Геннадий Николаевич Ложкин</p>
                         <p class="specialists__occ">
                             Генеральный директор <br>
-                            office@dvarf.ru
+                            <a href="mailto:office@dvarf.ru">office@dvarf.ru</a>
                         </p>
                     </div>
                     <div class="specialists__item">
@@ -389,7 +400,7 @@
                         <p class="specialists__name">Антон Дмитриевич Потапов</p>
                         <p class="specialists__occ">
                             Специалист по работе с партнерами <br>
-                            office@dvarf.ru
+                            <a href="mailto:office@dvarf.ru">office@dvarf.ru</a>
                         </p>
                     </div>
                     <div class="specialists__item">
@@ -397,7 +408,7 @@
                         <p class="specialists__name">Степан Владиславович Кухоренко</p>
                         <p class="specialists__occ">
                              Специалист по работе с клиентами <br>
-                            office@dvarf.ru
+                            <a href="mailto:office@dvarf.ru">office@dvarf.ru</a>
                         </p>
                     </div>
                 </div>
@@ -465,7 +476,7 @@
                             <input type="email" placeholder="Электронная почта*" required>
                             <div class="agree">
                                 <label>
-                                    <input class="checkbox-white" type="checkbox" name="checkbox-test">
+                                    <input class="checkbox-white" type="checkbox" name="checkbox-test" required>
                                     <span class="checkbox-custom-white"></span>
                                     <span class="label">Я согласен с условием обработки персональных данных </span>
                                 </label>
@@ -476,14 +487,16 @@
                 </div>
             </div>
             <footer class="footer">
-                <img src="images/logo_footer.png" alt="">
+                <img src="images/logo_footer_1.png" alt="">
                 <div class="address">
                     <p>Адрес: 143335, г. Москва, ул. Какая-то, д. 98, корп. 4</p>
                     <a href="#">Политика конфиденциальности</a>
                 </div>
                 <div class="phone">
-                    <p class="number">8 (800) 200-00-00</p>
-                    <p class="free-consult">Заказать звонок</p>
+                    <a href="tel:+74956460182" class="number">
+                        <p class="number">+7 (495) 646-01-82</p>
+                        <a class="free-consult">Заказать звонок</a>
+                    </a>
                 </div>
             </footer>
         </div>
@@ -491,6 +504,5 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="js/maskedfile.js"></script>
         <script src="js/mask.js"></script>
-
     </body>
 </html>

@@ -1,3 +1,4 @@
+//fonts
 @font-face {
     font-family: Helios-Pro-Regular;
     src: url(..//fonts/Helios-TASS-Pro-Regular.otf);
@@ -6,29 +7,129 @@
     font-family: Helios-Pro-Bold;
     src: url(..//fonts/Helios-TASS-Pro-Bold.otf);
 }
+//resolutions
+$desktop: 1920px;
+$laptop: 1550px;
+$tablets: 1220px; 
+$min-tablets: 985px;
+$phones: 730px;
+$min-phones: 470px;
+//config
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+@mixin min-tablets {
+    @media screen and (max-width: $min-tablets) {
+        @content;
+    }
+}
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+@mixin min-phones {
+    @media screen and (max-width: $min-phones) {
+        @content;
+    }
+}
 
 body {
     font-family: Helios-Pro-Regular;
 }
+//главная страница
 .main-page {
     background: url('..//images/b1.png') center center no-repeat;
     width: 100%;
-    // height: 100%;
     min-height: 100vh;
     background-size: cover;
+    padding-bottom: 50px;
+    @include tablets {
+        min-height: 100%;
+    }
 }
 .header {
     padding: 35px 146px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 1600px) {
+        padding: 35px 50px;
+    }
+    @include laptop {
+        padding: 35px 90px;
+        @include tablets {
+            padding: 35px 30px;
+        }
+        @include min-tablets {
+            padding: 35px 30px;
+        }
+        @include phones {
+            padding: 35px 10px;
+        }
+    }
+    img {
+        width: 140px;
+        @include laptop {
+            width: 100px;
+        }
+        @include tablets {
+            width: 80px;
+        }
+        @include min-tablets {
+            width: 60px;
+        }
+        @include min-phones {
+            width: 40px;
+        }
+    }
 }
 .menu {
+    @include phones {
+        display: flex;
+        flex-direction: column;
+        line-height: 2;
+        align-items: center;
+        @include min-phones {
+            margin-left: 20px;
+            line-height: 1.7;
+        }
+    }
     a {
         color: black;
         text-decoration: none;
         text-transform: uppercase;
         margin-right: 50px;
+        @include laptop {
+            margin-right: 30px;
+            font-size: 15px;
+        }
+        @include tablets {
+            margin-right: 20px;
+            font-size: 13px;
+        }
+        @include min-tablets {
+            margin-right: 10px;
+            font-size: 10px;
+        }
+        @include phones {
+            margin-right: 0;
+        }
+        @include min-phones {
+            font-size: 8px;
+        }
+        &:last-child {
+            @include laptop {
+                margin-right: 0;
+            }
+        }
         &:hover {
             text-decoration: underline;
         }
@@ -37,6 +138,15 @@ body {
             border: 2px solid #249648;
             border-radius: 8px;
             padding: 20px 25px;
+            @include laptop {
+                padding: 15px 10px;
+            }
+            @include phones {
+                padding: 5px;
+            }
+            @include min-phones {
+                padding: 2px 5px;
+            }
             &:hover {
                 box-shadow: 0 0 10px rgba(0,0,0,0.5);
                 text-decoration: none;
@@ -44,36 +154,125 @@ body {
         }
     }    
 }
+.phone {
+    @include phones {
+        width: 116px;
+    }
+}
 .number {
     font-family: Helios-Pro-Bold;
     font-size: 36px;
     margin: 0;
     text-align: center;
+    color: black;
+    text-decoration: none;
+    @include laptop {
+        font-size: 28px;
+    }
+    @include tablets {
+        font-size: 24px;
+    }
+    @include min-tablets {
+        font-size: 18px;
+    }
+    @include phones {
+        font-size: 13px;
+    }
+    @include min-phones {
+        font-size: 11px;
+    }
 }
 .free-consult {
     font-size: 17px;
     margin: 0;
     margin-top: 10px;
+    @include laptop {
+        font-size: 14px;
+    }
+    @include laptop {
+        font-size: 12px;
+    }
+    @include min-tablets {
+        font-size: 10px;
+    }
+    @include min-phones {
+        font-size: 8px;
+    }
 }
 .main-content {
     width: 864px;
-    // padding-left: 20px;
     margin-left: 150px;
     margin-top: 150px;
+    @include laptop {
+        margin-top: 50px;
+        margin-left: 90px;
+    }
+    @include tablets {
+        margin-top: 0;
+        margin-left: 30px;
+        width: 550px;
+        padding-bottom: 30px;
+    }
+    @include min-tablets {
+        width: 450px;
+    }
+    @include phones {
+        width: 70%;
+        text-align: center;
+        margin-left: 0;
+        margin: 0 auto;
+    }
     &__title {
         font-size: 67px;
         color: #249648;
         text-transform: uppercase;
         margin-bottom: 0;
+        @include laptop {
+            font-size: 46px;
+        }
+        @include tablets {
+            font-size: 38px;
+        }
+        @include min-tablets {
+            font-size: 32px;
+        }
+        @include phones {
+            font-size: 28px;
+        }
+        @include min-phones {
+            font-size: 24px;
+        }
     }
     &__list {
         font-size: 36px;
         margin-top: 40px;
+        @include laptop {
+            font-size: 26px;
+        }
+        @include laptop {
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        @include min-tablets {
+            font-size: 18px;
+        }
+        @include phones {
+            font-size: 15px;
+            padding: 0;
+            width: 210px;
+            margin: 20px auto 20px auto;
+        }
+        @include min-phones {
+            margin: 20px 0;
+        }
     }
     &__item {
         color: #249648;
         span {
             color: black;
+            @include phones {
+                text-shadow: white 0 0 1px;
+            }
         }
     }
 }
@@ -83,6 +282,15 @@ body {
     padding: 20px 45px;
     text-transform: uppercase;
     border-radius: 8px;
+    @include laptop {
+        padding: 20px 30px;
+    }
+    @include tablets {
+        padding: 15px;
+    }
+    @include min-phones {
+        padding: 10px;
+    }
     &:hover {
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
@@ -90,46 +298,125 @@ body {
         color: white;
         font-size: 20px;
         text-decoration: none;
+        @include laptop {
+            font-size: 18px;
+        }
+        @include tablets {
+            font-size: 16px;
+        }
+        @include phones {
+            font-size: 12px;
+        }
+        @include min-phones {
+            font-size: 11px;
+        }
     }
-}
-.title {
-    font-size: 47px;
-    color: #249648;
-    text-transform: uppercase;
-    margin-bottom: 0;
 }
 hr {
     border: 7px solid #249648; 
     margin: 0;
 }
+//короткая форма заявки
 .short-form {
     padding: 0 146px;
+    @media screen and (max-width: 1700px) {
+        padding: 0 50px;
+    }
+    @include laptop {
+        padding: 0 90px;
+    }
+    @include phones {
+        padding: 0 40px;
+    }
+    @include min-phones {
+        padding: 0 20px;
+    }
     &__title {
         font-size: 47px;
         color: #249648;
         text-transform: uppercase;
         text-align: center;
         margin-top: 70px;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+            line-height: 1.3;
+        }
+        @include min-tablets {
+            font-size: 30px;
+        }
+        @include phones {
+            font-size: 22px;
+        }
+        @include min-phones {
+            font-size: 18px;
+            margin-top: 40px;
+        }
     }
     form {
         background-color: #e6e7e8;
         padding: 50px 75px;
+        @media screen and (max-width: 1700px) {
+            padding: 50px 40px;
+        }
+        @include laptop {
+            padding: 50px 30px;
+        }
+        @include tablets {
+            padding: 20px 30px 30px 30px;;
+        }
+        @include phones {
+            margin-top: 30px;
+            padding: 20px 10px;
+        }
     }
     &__wrap {
         display: flex;
         justify-content: space-between;
+        @include tablets {
+            flex-direction: column;
+            align-items: center;
+        }
         input {
-            // width: 150px;
-            width: 250px;
             padding: 15px;
             border-radius: 8px;
             border: 2px solid #249648;
+            margin-right: 20px;
+            @include laptop {
+                width: 170px;
+                padding: 10px 8px;
+                margin-right: 0;
+            }
+            @include tablets {
+                margin-top: 15px;
+                width: 250px;
+            }
+            @include phones {
+                padding: 6px;
+            }
+            @include min-phones {
+                width: 180px;
+            }
         }
         input[type="submit"] {
             background-color: #249648; 
             text-transform: uppercase;
             color: white;
             font-family: Helios-Pro-Regular;
+            @include laptop {
+                font-size: 14px;
+            }
+            @include phones {
+                font-size: 12px;
+            }
+            @include tablets {
+                width: 270px;
+            }
+            @include min-phones {
+                width: 200px;
+            }
             &:hover {
                 cursor: pointer;
                 box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -140,7 +427,20 @@ hr {
 .agree {
     text-align: center;
     margin-top: 40px;
+    @include laptop {
+        font-size: 15px;
+    }
+    @include phones {
+        font-size: 12px;   
+    }
+    @include min-phones {
+        .label {
+            font-size: 10px;
+            width: 160px;
+        }
+    }
 }
+//кастомизация чекбокса
 .checkbox {
 	display: none;
 }
@@ -150,6 +450,11 @@ hr {
 	height: 22px;            
     background: url("..//images/check_no.png") no-repeat;
     cursor: pointer;
+    @include phones {
+        width: 22px;
+        height: 15px;
+        background-size: contain;
+    }
 }
 .checkbox-custom, .label {
 	display: inline-block;
@@ -164,10 +469,12 @@ hr {
 	bottom: 2px; 
 	left: 0px; 
     background: url("..//images/check_yes.png") no-repeat;
+    @include phones {
+        bottom: 0px;
+        background-size: contain;
+    }
 }
-
-
-
+//кастомизация белого чекбокса
 .checkbox-white {
 	display: none;
 }
@@ -177,6 +484,11 @@ hr {
 	height: 22px;            
     background: url("..//images/check_white_no.png") no-repeat;
     cursor: pointer;
+    @include phones {
+        width: 22px;
+        height: 15px;
+        background-size: contain;
+    }
 }
 .checkbox-custom-white, .label {
 	display: inline-block;
@@ -191,55 +503,84 @@ hr {
 	bottom: 2px; 
 	left: 0px; 
     background: url("..//images/check_white_yes.png") no-repeat;
+    @include phones {
+        bottom: 0px;
+        background-size: contain;
+    }
 }
-
-
-
-
-
-
-
+//цвет атрибута placeholder для input
 ::-webkit-input-placeholder {
     color: black;
     font-family: Helios-Pro-Regular;
     font-size: 14px;
+    @include phones {
+        font-size: 12px;
+    }
 }
 ::-moz-placeholder {
     color: black;
     font-family: Helios-Pro-Regular;
     font-size: 14px;
+    @include phones {
+        font-size: 10px;
+    }
 }
 :-moz-placeholder {
     color: black;
     font-family: Helios-Pro-Regular;
     font-size: 14px;
+    @include phones {
+        font-size: 10px;
+    }
 }
 :-ms-input-placeholder {
     color: black;
     font-family: Helios-Pro-Regular;
     font-size: 14px;  
+    @include phones {
+        font-size: 10px;
+    }
 }
+//услуги
 .services {
-    // display: flex;
-    // flex-direction: column;
-    padding: 0 143px;
-    // padding: 0 50px;
+    padding: 50px 143px;
+    @include tablets {
+        padding: 50px;
+    }
     &__title {
         font-size: 47px;
         color: #249648;
         text-transform: uppercase;
         text-align: center;
         margin-top: 35px;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include min-tablets {
+            font-size: 30px;
+        }
+        @include phones {
+            font-size: 22px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__items {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media screen and (max-width: 1310px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__item {
         width: 430px;
         margin-top: 40px;
-        // width: 300px;
         padding: 45px 35px;
         border: 2px solid #d1d3d4;
         border-radius: 5px;
@@ -247,11 +588,43 @@ hr {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        @include tablets {
+            padding: 45px 0px;
+            justify-content: center;
+        }
+        @include phones {
+            width: 350px;
+        }
+        @include min-phones {
+            width: 250px;
+        }
         li {
             color: #249648;
         }
         span {
             color: black;
+            @include phones {
+                font-size: 13px;
+            }
+            @include min-phones {
+                font-size: 11px;
+            }
+        }
+        img {
+            @include phones {
+                width: 120px;
+            }
+            @include min-phones {
+                width: 100px;
+            }
+        }
+        .img {
+            @include phones {
+                width: 80px;
+            }
+            @include min-phones {
+                width: 60px;
+            }
         }
     }
     &__name {
@@ -259,19 +632,58 @@ hr {
         color: #249648;
         text-transform: uppercase;
         text-align: center;
+        @include laptop {
+            font-size: 28px;
+        }
+        @include phones {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        @include min-phones {
+            font-size: 16px;
+        }
     }
 }
 .calc {
     background-color: #e6e7e8;
-    // padding: 40px 18px;
     border-radius: 5px;
     padding: 60px 70px;
     margin-top: 40px;
+    @media screen and (max-width: 1890px) {
+        padding: 60px 30px;
+    }
+    @media screen and (max-width: 1814px) {
+        margin: 40px auto 0 auto;
+    }
+    @include laptop {
+        padding: 40px 70px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    @include tablets {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include min-phones {
+        padding: 40px;
+        margin-left: 0;
+        margin-right: 0;
+    }
     &__title {
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
-        text-align: center
+        text-align: center;
+        margin-top: 0;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include phones {
+            font-size: 24px;
+        }
     }
     form {
         display: flex;
@@ -279,19 +691,26 @@ hr {
         align-items: center;
     }
     &__wrap {
-        // width: 1061px;
         width: 820px;
         padding: 0 50px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @include tablets {
+            flex-direction: column;
+            width: 0px;
+            align-items: center;
+        }
         input {
-            // width: 150px;
             width: 220px;
             padding: 10px 15px 10px 15px;
             border-radius: 8px;
             border: 2px solid #249648;
             margin-top: 20px;
+            @include min-phones {
+                width: 200px;
+                padding: 8px 15px 8px 10px;
+            }
         }
         ::-webkit-calendar-picker-indicator {
             color: transparent;
@@ -315,9 +734,18 @@ hr {
             font-family: Helios-Pro-Regular;
             font-size: 14px;
             margin-top: 14px;
+            @include phones {
+                font-size: 12px;
+            }
+            @include min-phones {
+                width: 230px;
+            }
         }
         .select-modify {
             border-radius: 0 8px 8px 0;
+            @include tablets {
+                border-radius: 8px;
+            }
         }
         span {
             padding: 12px 0 12px 15px;
@@ -325,12 +753,25 @@ hr {
             border: 2px solid #249648;
             border-right: none;
             width: 265px;
-            position: absolute;
-            margin-top: 83px;
+            position: relative;
+            margin-top: 14px;
             right: 0;
-            margin-right: 517px;
+            margin-left: 30px;
             background-color: white;
             font-size: 14px;
+            @include tablets {
+                border-radius: 8px;
+                width: 220px;
+                margin-left: 0;
+                border-right: 2px solid #249648;
+                padding: 10px 15px 10px 15px;
+            }
+            @include phones {
+                font-size: 12px;
+            }
+            @include min-phones {
+                width: 200px;
+            }
         }
     }
     &__checkboxes {
@@ -339,48 +780,124 @@ hr {
         line-height: 2.5;
         margin-bottom: 90px;
         text-align: center;
+        @include laptop {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        @include phones {
+            font-size: 12px;
+        }
+        @include min-phones {
+            font-size: 11px;
+        }
     }
 }
+//специальные условия для постоянных клиентов
 .special-conditions {
     background: url('..//images/b4.png') center center no-repeat;
-    // min-height: 100vh;
-    // width: 100%;
     background-size: cover;
     margin-top: 90px;
-    // padding: 114px 0 70px 0;
     padding: 114px 0 70px 143px;
+    @include laptop {
+        padding: 114px 0 70px 90px;
+    }
+    @include tablets {
+        padding: 60px 0 60px 50px;
+    }
+    @include min-tablets {
+        padding: 60px 0 60px 30px;
+    }
+    @include min-phones {
+        margin-top: 0px;
+        padding: 30px 0;
+    }
     &__text {
         width: 640px;
+        @include phones {
+            width: 100%;
+        }
     }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
+        @include laptop {
+            font-size: 42px;
+        }
+        @include phones {
+            font-size: 24px;
+            width: 350px;
+        }
+        @include min-phones {
+            font-size: 18px;
+            width: 100%;
+            text-align: center;
+        }
     }
     &__desc {
         margin: 0;
         margin-top: 40px;
         font-size: 36px;
+        @include laptop {
+            font-size: 28px;
+        }
+        @include phones {
+            font-size: 16px;
+            width: 350px;
+        }
+        @include min-phones {
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+        }
     }
 }
+//преимущества
 .advantages {
     background-color: #e6e7e8;
     padding: 60px 200px;
-    // padding: 60px;
+    @include laptop {
+        padding: 60px 30px;
+    }
+    @include tablets {
+        padding: 60px 70px;
+    }
+    @include min-phones {
+        padding: 40px 70px;
+    }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
         text-align: center;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include laptop {
+            font-size: 36px;
+        }
+        @include phones {
+            font-size: 24px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__wrap {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-end;
         justify-content: space-between;
-        // justify-content: center;
+        @include tablets {
+            align-items: center;
+            margin-top: 20px;
+        }
+        @include min-tablets {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__item {
         display: flex;
@@ -388,6 +905,25 @@ hr {
         align-items: center;
         width: 400px;
         margin-top: 50px;
+        @include min-phones {
+            width: 250px;
+        }
+        img {
+            @include phones {
+                width: 120px;
+            }
+            @include min-phones {
+                width: 100px;
+            }
+        }
+        .img {
+            @include phones {
+                width: 100px;
+            }
+            @include min-phones {
+                width: 80px;
+            }
+        }
     }
     &__name {
         margin: 0;
@@ -396,32 +932,78 @@ hr {
         color: #249648;
         margin-top: 40px;
         text-align: center;
+        @include laptop {
+            font-size: 28px;
+        }
+        @include phones {
+            font-size: 20px;
+        }
+        @include min-phones {
+            font-size: 16px;
+        }
     }
     &__desc {
         margin-top: 20px;
         text-align: center;
+        @include phones {
+            font-size: 14px;
+        }
+        @include min-phones {
+            font-size: 14px;
+        }
     }
 }
+//этапы работы
 .workstages {
     padding: 80px 150px;
-    // padding: 80px 50px;
+    @include tablets {
+        padding: 80px 50px;
+    }
+    @include min-phones {
+        padding: 40px 30px;
+    }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
         text-align: center;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include phones {
+            font-size: 24px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media screen and (max-width: 1320px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__item {
         display: flex;
         align-items: center;
         width: 500px;
         margin-top: 40px;
+        @include tablets {
+            width: 440px;
+        }
+        @include phones {
+            width: 350px;
+        }
+        @include min-phones {
+            width: 270px;
+        }
     }
     &__desc {
         margin-left: 15px;
@@ -429,51 +1011,136 @@ hr {
     &__figure {
         font-size: 200px;
         color: #249648;
+        @include laptop {
+            font-size: 140px;
+        }
+        @include laptop {
+            font-size: 120px;
+        }
+        @include phones {
+            font-size: 90px;
+        }
+        @include min-phones {
+            font-size: 70px;
+        }
     }
     &__name {
         margin: 0;
-        // font-size: 28px;
         font-size: 34px;
         text-transform: uppercase;
         color: #249648;
+        @include laptop {
+            font-size: 28px;
+        }
+        @include laptop {
+            font-size: 24px;
+        }
+        @include phones {
+            font-size: 18px;
+        }
+        @include phones {
+            font-size: 14px;
+        }
     }
     &__text {
         font-size: 20px;
-        // font-size: 16px;
+        @include laptop {
+            font-size: 17px;
+        }
+        @include phones {
+            font-size: 13px;
+        }
+        @include phones {
+            font-size: 11px;
+        }
     }
 }
+//отправьте заявку, мы перезвоним
 .feedback {
     padding: 80px 220px;
-    // padding: 80px 40px;
     background-color: #249648;
+    @include laptop {
+        padding: 80px 40px;
+    }
+    @include phones {
+        padding: 40px;
+    }
+    @include min-phones {
+        padding: 20px;
+    }
     &__title {
         color: white;
         text-align: center;
         font-size: 47px;
         text-transform: uppercase;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include phones {
+            font-size: 24px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__prew {
         margin-top: 60px;
         font-size: 36px;
-        // font-size: 30px;
         text-align: center;
         color: white;
+        @include laptop {
+            font-size: 30px;
+        }
+        @include tablets {
+            font-size: 24px;
+        }
+        @include min-tablets {
+            font-size: 20px;
+        }
+        @include phones {
+            font-size: 15px;
+            margin-top: 40px;
+        }
+        @include min-phones {
+            font-size: 12px;
+        }
     }
     .form {
         display: flex;
         justify-content: space-around;
         margin-top: 60px;
         align-items: flex-start;
+        @media screen and(max-width: 750px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        @include min-phones {
+            margin-top: 20px;
+        }
         &__name, &__phone {
             display: flex;
             flex-direction: column;
             align-items: center;
-            // font-size: 16px;
             font-size: 20px;
             color: white;
             position: relative;
             label {
                 margin-bottom: 10px;
+                @include laptop {
+                    font-size: 16px;
+                }
+                @media screen and(max-width: 750px) {
+                    font-size: 12px;
+                    margin-top: 25px;
+                }
+            }
+            input {
+                @include min-tablets {
+                    width: 220px;
+                }
             }
         }
         .form-control {
@@ -483,6 +1150,9 @@ hr {
             border-bottom: 1px solid white;
             border-radius: 0;
             box-shadow: none;
+            @include phones {
+                margin-top: 0;
+            }
             &:focus, &:valid {
                 outline: 0;
                  + label {
@@ -498,6 +1168,14 @@ hr {
             border: none;
             padding: 15px 35px;
             border-radius: 10px;
+            @include min-tablets {
+                padding: 15px;
+            }
+           @media screen and(max-width: 750px) {
+                padding: 10px;
+                margin-top: 25px;
+                font-size: 13px;
+            }
             &:hover {
                 cursor: pointer;
                 box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -505,6 +1183,13 @@ hr {
         }
         .checkbox-wrap {
             margin-top: 25px;
+            .label {
+                font-size: 14px;
+                @include min-tablets {
+                    width: 200px;
+                    font-size: 12px;
+                }
+            }
         }
     }
 }
@@ -512,49 +1197,143 @@ hr {
     position: absolute;
     top: 45px;
     font-size: 24px;
-    // font-size: 20px;
     pointer-events: none;
+    @include phones {
+        top: 30px;
+    }
 }
-
+//выберите личного консультанта
 .personal {
     background-color: #e6e7e8;
     padding: 90px 220px;
-    // padding: 90px 50px;
+    @media screen and (max-width: 1600px) {
+        padding: 90px 100px;
+    }
+    @include laptop {
+        padding: 90px 50px;
+    }
+    @include phones {
+        padding: 50px;
+    }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
         text-align: center;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include phones {
+            font-size: 26px;
+        }
+        @include phones {
+            font-size: 18px;
+        }
     }
     &__wrap {
         display: flex;
         justify-content: space-between;
         margin-top: 120px;
+        @include tablets {
+            margin-top: 60px;
+        }
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
     }
     &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include phones {
+            margin-top: 25px;
+        }
+        img {
+            @include tablets {
+                width: 230px;
+            }
+            @include min-tablets {
+                width: 180px;
+            }
+            @include min-phones {
+                width: 140px;
+            }
+        }
     }
     &__name {
         font-size: 36px;
         font-family: Helios-Pro-Bold;
+        @include laptop {
+            font-size: 28px;
+            margin-bottom: 0;
+        }
+        @include tablets {
+            font-size: 24px;
+        }
+        @include min-tablets {
+            font-size: 20px;
+        }
+        @include min-phones {
+            font-size: 15px;
+        }
     }
     &__occ {
         text-align: center;
         font-size: 20px;
+        @include laptop {
+            font-size: 17px;
+        }
+        @include tablets {
+            font-size: 15px;
+        }
+        @include min-phones {
+            font-size: 12px;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__phone {
+        margin: 0;
     }
 }
+//наши партнеры
 .partners {
     padding: 80px 180px;
-    // padding: 80px 50px;
+    @include laptop {
+        padding: 80px 50px;
+    }
+    @include phones {
+        padding: 50px;
+    }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
         text-align: center;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include phones {
+            font-size: 26px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__wrap {
         margin-top: 60px;
@@ -564,106 +1343,347 @@ hr {
         justify-content: space-between;
         img {
             width: 280px;
+            @include phones {
+                width: 200px;
+                margin-top: 10px;
+            }
+            @include min-phones {
+                width: 150px;
+            }
+        }
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
         }
     }
 }
-
-
+//специалисты
 .specialists {
     background-color: #e6e7e8;
     padding: 90px 220px;
-    // padding: 90px 50px;
+    @media screen and (max-width: 1600px) {
+        padding: 90px 50px;
+    }
+    @include laptop {
+        padding: 90px 40px;
+    }
+    @include phones {
+        padding: 50px 40px;
+    }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: #249648;
         text-align: center;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include phones {
+            font-size: 30px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__wrap {
         display: flex;
         justify-content: space-between;
         margin-top: 120px;
+        @include laptop {
+            margin-top: 70px;
+        }
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        @include min-phones {
+            margin-top: 20px;
+        }
     }
     &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include phones {
+            margin-top: 20px;
+        }
+        img {
+            @include tablets {
+                width: 230px;
+            }
+            @include min-tablets {
+                width: 180px;
+            }
+            @include min-phones {
+                width: 140px;
+            }
+        }
     }
     &__name {
         font-size: 36px;
         font-family: Helios-Pro-Bold;
         text-align: center;
+        @include laptop {
+            font-size: 28px;
+            margin-bottom: 0;
+        }
+        @include tablets {
+            font-size: 22px;
+        }
+        @include min-tablets {
+            font-size: 18px;
+        }
+        @include min-phones {
+            font-size: 15px;
+        }
     }
     &__occ {
         text-align: center;
-        font-size: 20px;
+        font-size: 20px; 
+        @include laptop {
+            font-size: 17px;
+        }
+        @include tablets {
+            font-size: 15px;
+        }
+        @include min-tablets {
+            font-size: 13px;
+        }
+        @include min-phones {
+            font-size: 12px;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
+//последняя страница с формой
 .questions {
     background: url('..//images/b3.png') center center no-repeat;
-    // width: 100%;
     min-height: 100vh;
     background-size: cover;
     padding: 175px 150px 40px 150px;
-    // padding: 175px 50px;
+    @include laptop {
+        padding: 90px 50px;
+    }
+    @include tablets {
+        min-height: 100%;
+    }
+    @include phones {
+        padding: 50px 20px;
+    }
     &__title {
         margin: 0;
         font-size: 47px;
         text-transform: uppercase;
         color: white;
         text-align: center;
+        @include laptop {
+            font-size: 40px;
+        }
+        @include tablets {
+            font-size: 34px;
+        }
+        @include phones {
+            font-size: 26px;
+        }
+        @include min-phones {
+            font-size: 18px;
+        }
     }
     &__wrap {
         display: flex;
         margin-top: 90px;
+        @include min-tablets {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
     }
     &__left {
         background: rgba(39, 127, 72, 0.46);
         padding: 10px 70px;
         border-radius: 10px;
         margin-right: 50px;
+        @include laptop {
+            padding: 10px 40px;
+        }
+        @include tablets {
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        @include min-tablets {
+            margin-right: 0;
+            padding: 10px 80px;
+        }
+        @include phones {
+            padding: 10px 20px;
+        }
     }
     &__item {
         margin-top: 40px;
         display: flex;
         align-items: center;
+        @include laptop {
+            margin-top: 20px;
+        }
+        @include min-tablets {
+            flex-direction: column;
+            align-items: center;
+        }
+        @include min-phones {
+            margin-top: 10px;
+        }
         img {
             width: 164px;
+            @include laptop {
+                width: 120px;
+            }
+            @include phones {
+                width: 80px;
+            }
+            @include min-phones {
+                width: 60px;
+            }
         }
     }
     &__desc {
         margin-left: 30px;
+        @include min-tablets {
+            margin-left: 0;
+            text-align: center;
+        }
     }
     &__option {
         font-size: 36px;
-        // font-size: 30px;
         color: white;
+        font-family: Helios-Pro-Bold;
+        @include laptop {
+            font-size: 26px;
+            margin-bottom: 0;
+        }
+        @include tablets {
+            font-size: 20px;
+        }
+        @include phones {
+            font-size: 14px;
+        }
     }
     &__text {
         font-size: 20px;
-        // font-size: 14px;
         color: white;
         text-align: justify;
+        @include laptop {
+            font-size: 15px;
+        }
+        @include tablets {
+            font-size: 14px;
+        }
+        @include phones {
+            font-size: 11px;
+        }
     }
     &__right {
         border: 2px solid white;
-        padding: 100px 40px;
+        padding: 100px 30px;
         border-radius: 10px;
         text-align: center;
+        @include min-tablets {
+            margin-top: 40px;
+            padding: 50px 80px;
+        }
+        @include phones {
+            padding: 50px 20px;
+        }
+        @include min-phones {
+            padding: 30px 20px;
+        }
         form {
+            @include min-tablets {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            ::-webkit-input-placeholder {
+                color: white;
+                font-family: Helios-Pro-Regular;
+                font-size: 14px;
+                @include phones {
+                    font-size: 12px;
+                }
+            }
+            ::-moz-placeholder {
+                color: white;
+                font-family: Helios-Pro-Regular;
+                font-size: 14px;
+                @include phones {
+                    font-size: 12px;
+                }
+            }
+            :-moz-placeholder {
+                color: white;
+                font-family: Helios-Pro-Regular;
+                font-size: 14px;
+                @include phones {
+                    font-size: 12px;
+                }
+            }
+            :-ms-input-placeholder {
+                color: white;
+                font-family: Helios-Pro-Regular;
+                font-size: 14px; 
+                @include phones {
+                    font-size: 12px;
+                } 
+            }
             input {
                 margin-top: 15px;
-                // width: 412px;
+                width: 412px;
                 padding: 15px;
                 border-radius: 8px;
                 border: 2px solid white;
                 background: none;
+                @include tablets {
+                    width: 250px;
+                }
+                @include min-tablets {
+                    width: 300px;
+                    margin-top: 40px;
+                }
+                @include phones {
+                    padding: 8px;
+                }
+                @include min-phones {
+                    width: 200px;
+                    margin-top: 20px;
+                }
             }
             .agree {
                 color: white;
-                font-size: 20px;
-                // font-size: 14px;
+                font-size: 15px;
+                @include phones {
+                    font-size: 12px;
+                }
+                .label {
+                    @include laptop {
+                        width: 250px;
+                    }
+                    @include phones {
+                        width: 200px;
+                    }
+                    @include min-phones {
+                        width: 160px;
+                    }
+                }  
             }
             input[type="submit"] {
                 background-color: #249648; 
@@ -672,6 +1692,19 @@ hr {
                 font-family: Helios-Pro-Regular;
                 border: none;
                 margin-top: 20px;
+                width: 440px;
+                @include tablets {
+                    width: 290px;
+                }
+                @include min-tablets {
+                    width: 340px;
+                }
+                @include phones {
+                    font-size: 13px;
+                }
+                @include min-phones {
+                    width: 220px;
+                }
                 &:hover {
                     cursor: pointer;
                     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -680,6 +1713,7 @@ hr {
         }
     }
 }
+//футер
 .footer {
     background-color: #249648;
     display: flex;
@@ -687,11 +1721,46 @@ hr {
     align-items: center;
     color: white;
     padding: 30px 150px;
-    // padding: 10px 30px;
+    @include laptop {
+        padding: 10px 90px;
+    }
+    @include tablets {
+        padding: 10px 50px;
+    }
+    @include phones {
+        padding: 10px;
+    }
+    @include min-phones {
+        padding: 10px 5px;
+    }
+    img {
+        width: 100px;
+        @include tablets {
+            width: 70px;
+        }
+        @include min-tablets {
+            width: 55px;
+        }
+        @include phones {
+            width: 40px;
+        }
+    }
     .address {
         color: white;
         font-size: 20px;
-        // font-size: 16px;
+        @include laptop {
+            font-size: 16px;
+        }
+        @include min-tablets {
+            font-size: 12px;
+            text-align: center;
+        }
+        @include phones {
+            font-size: 10px;
+        }
+        @include min-phones {
+            font-size: 9px;
+        }
     }
     a {
         color: white;
@@ -702,5 +1771,32 @@ hr {
     }
     .phone {
         text-align: right;
+        @include min-phones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .number {
+            text-decoration: none;
+            color: white;
+            @include phones {
+                font-size: 12px;
+            }
+        }
+        .free-consult {
+            @include laptop {
+                font-size: 17px;
+            }
+            @include phones {
+                font-size: 11px;
+            }
+            @include min-phones {
+                font-size: 9px;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
