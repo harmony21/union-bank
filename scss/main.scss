@@ -521,6 +521,7 @@ hr {
     color: black;
     font-family: Helios-Pro-Regular;
     font-size: 14px;
+    opacity: 1;
     @include phones {
         font-size: 10px;
     }
@@ -529,6 +530,7 @@ hr {
     color: black;
     font-family: Helios-Pro-Regular;
     font-size: 14px;
+    opacity: 1;
     @include phones {
         font-size: 10px;
     }
@@ -546,6 +548,9 @@ hr {
     padding: 50px 143px;
     @include tablets {
         padding: 50px;
+    }
+    @include min-phones {
+        padding: 50px 10px;
     }
     &__title {
         font-size: 47px;
@@ -698,8 +703,9 @@ hr {
         justify-content: space-between;
         @include tablets {
             flex-direction: column;
-            width: 0px;
+            width: 0;
             align-items: center;
+            flex-wrap: nowrap;
         }
         input {
             width: 220px;
@@ -897,6 +903,7 @@ hr {
         @include min-tablets {
             flex-direction: column;
             align-items: center;
+            flex-wrap: nowrap;
         }
     }
     &__item {
@@ -988,6 +995,7 @@ hr {
         @media screen and (max-width: 1320px) {
             flex-direction: column;
             align-items: center;
+            flex-wrap: nowrap;
         }
     }
     &__item {
@@ -1255,6 +1263,7 @@ hr {
             margin-top: 25px;
         }
         img {
+            border-radius: 10000px;
             @include tablets {
                 width: 230px;
             }
@@ -1269,6 +1278,7 @@ hr {
     &__name {
         font-size: 36px;
         font-family: Helios-Pro-Bold;
+        text-align: center;
         @include laptop {
             font-size: 28px;
             margin-bottom: 0;
@@ -1355,112 +1365,6 @@ hr {
             flex-direction: column;
             align-items: center;
             margin-top: 30px;
-        }
-    }
-}
-//специалисты
-.specialists {
-    background-color: #e6e7e8;
-    padding: 90px 220px;
-    @media screen and (max-width: 1600px) {
-        padding: 90px 50px;
-    }
-    @include laptop {
-        padding: 90px 40px;
-    }
-    @include phones {
-        padding: 50px 40px;
-    }
-    &__title {
-        margin: 0;
-        font-size: 47px;
-        text-transform: uppercase;
-        color: #249648;
-        text-align: center;
-        @include laptop {
-            font-size: 40px;
-        }
-        @include phones {
-            font-size: 30px;
-        }
-        @include min-phones {
-            font-size: 18px;
-        }
-    }
-    &__wrap {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 120px;
-        @include laptop {
-            margin-top: 70px;
-        }
-        @include phones {
-            flex-direction: column;
-            align-items: center;
-            margin-top: 40px;
-        }
-        @include min-phones {
-            margin-top: 20px;
-        }
-    }
-    &__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        @include phones {
-            margin-top: 20px;
-        }
-        img {
-            @include tablets {
-                width: 230px;
-            }
-            @include min-tablets {
-                width: 180px;
-            }
-            @include min-phones {
-                width: 140px;
-            }
-        }
-    }
-    &__name {
-        font-size: 36px;
-        font-family: Helios-Pro-Bold;
-        text-align: center;
-        @include laptop {
-            font-size: 28px;
-            margin-bottom: 0;
-        }
-        @include tablets {
-            font-size: 22px;
-        }
-        @include min-tablets {
-            font-size: 18px;
-        }
-        @include min-phones {
-            font-size: 15px;
-        }
-    }
-    &__occ {
-        text-align: center;
-        font-size: 20px; 
-        @include laptop {
-            font-size: 17px;
-        }
-        @include tablets {
-            font-size: 15px;
-        }
-        @include min-tablets {
-            font-size: 13px;
-        }
-        @include min-phones {
-            font-size: 12px;
-        }
-        a {
-            color: black;
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
-            }
         }
     }
 }
@@ -1625,6 +1529,7 @@ hr {
                 color: white;
                 font-family: Helios-Pro-Regular;
                 font-size: 14px;
+                opacity: 1;
                 @include phones {
                     font-size: 12px;
                 }
@@ -1633,6 +1538,7 @@ hr {
                 color: white;
                 font-family: Helios-Pro-Regular;
                 font-size: 14px;
+                opacity: 1;
                 @include phones {
                     font-size: 12px;
                 }
